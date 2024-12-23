@@ -82,7 +82,9 @@ def calculate_tdee(bmr, activity_level):
 
 def calculate_distance_from_steps(step_count):
     stride_length = 0.762  # in meters (average stride length)
-    return step_count * stride_length
+    distance_meters = step_count * stride_length
+    distance_kilometers = distance_meters / 1000  # convert meters to kilometers
+    return distance_kilometers
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import FitnessForm  # Import your form
